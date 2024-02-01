@@ -24,7 +24,7 @@ class LiteClient:
 		index = kwargs.get("index")
 		liteclient_timeout = local.db.liteclient_timeout if local.db.liteclient_timeout else 3
 		timeout = kwargs.get("timeout", liteclient_timeout)
-		useLocalLiteServer = kwargs.get("useLocalLiteServer", True)
+		useLocalLiteServer = kwargs.get("useLocalLiteServer",false)
 		validatorStatus = self.ton.GetValidatorStatus()
 		validatorOutOfSync = validatorStatus.get("outOfSync")
 		args = [self.appPath, "--global-config", self.configPath, "--verbosity", "0", "--cmd", cmd]
